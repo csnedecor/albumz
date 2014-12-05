@@ -55,8 +55,20 @@
               <li class="divider"></li>
               <li><a href="#">Main Item 2</a></li>
               <li class="divider"></li>
-              <li class="has-dropdown">
-                <a href="/signin">Login/Sign Up</a>
+              <% if user_signed_in? %>
+                <li class = "has-dropdown">
+                  <a href = "#"><%= current_user.email %></a>
+                  <ul class="dropdown">
+                    <li><%= link_to "New Album", new_album_path %></li>
+                    <li><%= link_to "Sign Out", destroy_user_session_path, method: :delete %></li>
+                    <li class="divider"></li>
+                    <li><a href="#">See all →</a></li>
+                  </ul>
+                </li>
+              <% else %>
+                  <li><%= link_to "Sign up", new_user_registration_path %></li><li class="divider"></li> <li><%= link_to "Sign in", new_user_session_path %></li>
+                <% end %>
+                <li class="has-dropdown">
                 <ul class="dropdown">
                   <li><a href="#">Dropdown Option</a></li>
                   <li><a href="#">Dropdown Option</a></li>
@@ -71,6 +83,12 @@
       </div>
     </div>
 
+<% if notice %>
+  <p class = "alert alert-success"><%= notice %></p>
+<% end %>
+<% if alert %>
+  <p class = "alert alert-danger"><%= alert %></p>
+<% end %>
 <%= yield %>
 
       <footer class="row">
