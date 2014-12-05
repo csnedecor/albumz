@@ -1,0 +1,9 @@
+
+<% @albums.each do |album| %>
+  <ul>
+    <li><%= album.name %> by <%= album.user_id %>
+      <p>
+        <%= album.description %>
+      </p></li>
+  </ul>
+<% end %>

@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  get 'albums/new'
+
   devise_for :users
   resources :albums
   root 'static_pages#home'

@@ -1,0 +1,14 @@
+<h1>Create a New Album</h1>
+<%= form_for :album, url: albums_path do |f| %>
+  <p>
+    <%= f.label :album_name %><br>
+    <%= f.text_field :name %>
+  </p>
+  <p>
+    <%= f.label :description %><br>
+    <%= f.text_area :description %>
+  </p>
+    <p>
+      <%= f.submit %>
+    </p>
+<% end %>
