@@ -4,6 +4,10 @@
     <li><%= album.name %> by <%= album.user.email %>
       <p>
         <%= album.description %>
-      </p></li>
+      </p>
+      <p>
+        <%= image_tag album.photos[0].photo.url %>
+      </p>
+    </li>
   </ul>
 <% end %>
