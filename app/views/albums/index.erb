@@ -1,7 +1,7 @@
 
 <% @albums.each do |album| %>
   <ul>
-    <li><%= album.name %> by <%= album.user_id %>
+    <li><%= album.name %> by <%= album.user.email %>
       <p>
         <%= album.description %>
       </p></li>
