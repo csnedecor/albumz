@@ -2,7 +2,12 @@ Rails.application.routes.draw do
   get 'albums/new'
 
   devise_for :users
-  resources :albums
+  resources :albums do
+    resources :photos
+  end
+
+
+
   root 'static_pages#home'
 
   # The priority is based upon order of creation: first created -> highest priority.

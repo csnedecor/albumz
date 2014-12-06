@@ -28,6 +28,8 @@ gem 'spring',        group: :development
 #Devise provides authentication services to the application
 gem 'devise'
 gem 'pry-rails', group: :development
+gem 'paperclip', "~> 4.2"
+gem 'cocoon'
 
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'

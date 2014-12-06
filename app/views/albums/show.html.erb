@@ -6,3 +6,6 @@
   <strong>Description:</strong>
   <%= @album.description %>
 </p>
+<% @album.photos.each do |photo| %>
+  <%= image_tag photo.photo.url %>
+<% end %>
