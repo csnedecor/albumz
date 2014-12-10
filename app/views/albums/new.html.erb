@@ -10,7 +10,7 @@
   </p>
   <p>
     <%= f.fields_for :photos do |photo| %>
-      <%= photo.file_field :photo %>
+      <% render 'photo_fields', :f => photo %>
     <% end %>
     <div class = 'links'>
       <%= link_to_add_association 'Add Photo', f, :photos %>

@@ -29,7 +29,7 @@
       <% @albums.each do |album| %>
         <div class="large-4 small-6 columns">
           <div id="album-cover">
-            <%= image_tag album.photos[0].photo.url %>
+            <a href = "/albums/<%= album.id %>"><%= image_tag album.photos[0].photo.url %></a>
           </div>
         <div class="panel">
           <h5><%= album.name %></h5>
