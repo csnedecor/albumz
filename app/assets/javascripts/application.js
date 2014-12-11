@@ -15,3 +15,4 @@
 //= require cocoon
 //= require_tree .
 
+$(document).foundation();
