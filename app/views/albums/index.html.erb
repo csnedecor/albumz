@@ -6,7 +6,7 @@
         <%= album.description %>
       </p>
       <p>
-        <%= image_tag album.photos[0].photo.url %>
+        <%= link_to image_tag album.photos[0].photo.url, album_path(album.id) %>
       </p>
     </li>
   </ul>

@@ -1,12 +1,15 @@
 <p>
   <strong>Album name:</strong>
-  <%= @album.name %>
-  <%= link_to("Edit", edit_album_path(@album)) %>
+  <%= @album.name %><%= link_to("Done", album_path(@album)) %>
 </p>
 <p>
   <strong>Description:</strong>
   <%= @album.description %>
 </p>
 <% @album.photos.each do |photo| %>
+
   <%= link_to(image_tag(photo.photo.url), album_photo_path(@album, photo)) %>
+  <%= link_to("Edit", edit_album_photo_path(@album, photo)) %>
+  <%= link_to("Delete", album_photo_path(@album, photo), confirm: "Are you sure?", method: :delete) %>
+
 <% end %>

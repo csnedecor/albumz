@@ -20,6 +20,10 @@ class AlbumsController < ApplicationController
     @albums = Album.all
   end
 
+  def edit
+    @album = Album.find(params[:id])
+  end
+
   private
     def album_params
       params.require(:album).permit(:name, :description, :photo,  :photos_attributes => [:id, :photo, :destroy])
