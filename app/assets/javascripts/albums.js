@@ -40,7 +40,7 @@ $(function() {
       var img = new Image();
       console.log(file);
       img.src = file.target.result;
-      $('#target').html(img);
+      $('.target').html(img);
     }
     reader.readAsDataURL(image);
     console.log(files);
@@ -59,7 +59,7 @@ $(function() {
         console.log(file);
         img.src = file.target.result;
         // instead of replacing the HTML of the target, we need to append
-        $('#target').append(img);
+        $('.target:last').append(img);
       }
       reader.readAsDataURL(image);
       console.log(files);
