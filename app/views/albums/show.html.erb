@@ -9,5 +9,5 @@
 <% @album.photos.each do |photo| %>
 
   <%= image_tag photo.photo.url %>
-  <%#= link_to("Edit", edit_photo_path(photo.id)) %>
+  <%= link_to("Edit", edit_album_photo_path(@album, photo)) %>
 <% end %>
