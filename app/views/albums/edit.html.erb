@@ -1,3 +1,32 @@
+
+<%= form_for @album, url: album_path(@album), :html => { :multipart => true } do |f| %>
+  <p>
+    <%= f.label :album_name %><br>
+    <%= f.text_field :name %>
+  </p>
+  <p>
+    <%= f.label :description %><br>
+    <%= f.text_area :description %>
+  </p>
+  <p>
+    <%= f.submit %>
+  </p>
+<% end %>
+  <p>
+    <%= form_for @album, url: album_path(@album), :html => { :multipart => true } do |f| %>
+
+      <%= f.fields_for :photos, @album.photos do |photo| %>
+        <% render 'photo_fields', f: photo %>
+      <% end %>
+    <div class = 'links'>
+      <%= link_to_add_association 'Add Photo', f, :photos %>
+    </div>
+  </p>
+  <p>
+    <%= f.submit %>
+  </p>
+<% end %>
+
 <p>
   <strong>Album name:</strong>
   <%= @album.name %><%= link_to("Done", album_path(@album)) %>
@@ -6,6 +35,7 @@
   <strong>Description:</strong>
   <%= @album.description %>
 </p>
+
 <% @album.photos.each do |photo| %>
 
   <%= link_to(image_tag(photo.photo.url), album_photo_path(@album, photo)) %>
@@ -13,3 +43,12 @@
   <%= link_to("Delete", album_photo_path(@album, photo), confirm: "Are you sure?", method: :delete) %>
 
 <% end %>
+
+  <!-- <p>
+    <%#= f.fields_for :photos do |photo| %>
+      <%# render 'photo_fields', :f => photo %>
+    <%# end %>
+    <div class = 'links'>
+      <%#= link_to_add_association 'Add Photo', f, :photos %>
+    </div>
+  </p> -->

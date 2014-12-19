@@ -13,6 +13,7 @@
 //= require jquery
 //= require jquery_ujs
 //= require cocoon
+//= require jquery.min
 //= require_tree .
 
 $(document).foundation();

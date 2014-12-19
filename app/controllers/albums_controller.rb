@@ -1,7 +1,6 @@
 class AlbumsController < ApplicationController
   def new
     @album = Album.new
-    @photo = @album.photos.build
   end
 
   def create
@@ -22,6 +21,16 @@ class AlbumsController < ApplicationController
 
   def edit
     @album = Album.find(params[:id])
+  end
+
+  def update
+    @album = Album.find(params[:id])
+    if @album.update_attributes(album_params)
+      flash[:success] = "Updated album"
+      render 'edit'
+    else
+      render 'edit'
+    end
   end
 
   private

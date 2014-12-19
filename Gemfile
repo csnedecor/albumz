@@ -32,6 +32,14 @@ gem 'pry-rails', group: :development
 gem 'paperclip', "~> 4.2"
 gem 'cocoon'
 
+group :development, :test do
+  gem 'rspec-rails'
+  gem 'capybara'
+  gem 'factory_girl_rails'
+  gem 'database_cleaner'
+  gem 'launchy'
+end
+
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
 
